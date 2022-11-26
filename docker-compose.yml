@@ -6,12 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - ${CLIENT_PORT}:${CLIENT_PORT}
+      - 3099:3099
     volumes:
       - '/app/node_modules'
       - .:/app
-      - ./.env:/app/.env
-    environment:
-      - CLIENT_PORT=${CLIENT_PORT}
 
 
