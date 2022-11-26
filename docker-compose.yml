@@ -13,7 +13,5 @@ services:
       - ./.env:/app/.env
     environment:
       - CLIENT_PORT=${CLIENT_PORT}
-    networks:
-      - public
 
 
