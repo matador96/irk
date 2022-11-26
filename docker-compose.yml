@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${CLIENT_PORT}:${CLIENT_PORT}
+    volumes:
+      - '/app/node_modules'
+      - .:/app
+      - ./.env:/app/.env
+    environment:
+      - CLIENT_PORT=${CLIENT_PORT}
+    networks:
+      - public
+
+
